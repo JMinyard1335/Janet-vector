@@ -58,6 +58,8 @@ the functionality is currently very simple and straight forward but it got the j
 
 ## Current Functions
 The current linear algebra functions supported by this module.
+#### (vector/length v1)
+Takes in a Janet Array 'v1' and returns the length of 'v1'.
 #### (vector/el-add v1 v2)
 Takes in two Janet Arrays 'v1' 'v2' and adds the elements of 'v2' to 'v1'.
 #### (vector/el-sub v1 v2)
@@ -72,10 +74,24 @@ Takes in a Janet Array 'v1' and a Janet Number 'c' and multiplies each element o
 Takes in two Janet Arrays 'v1' and 'v2' and finds the dot product of the two arrays.
 #### (vector/outer v1 v2)
 Takes in two Janet Arrays 'v1' and 'v2' and creates the matrix resulting from taking the outer product.
-## TODO
 #### (vector/cross v1 v2)
+Takes in two 3-deminsional Janet Arrays 'v1' and 'v2' and calculates the crosss product of the vectors.
+#### (vector/norm v1)
+Takes in a Janet Array 'v1' and calculates the Euclidean norm ||v1||~2~.
+#### (vector/normalize v1)
+Takes in a Janet Array 'v1' and normalizes it.
+
+## TODO
+## Features
+When c++26 support is full out swap the calculations for the ones built into the c++26 #include <linalg> library.
+## Functions
+These are the functions I want to add in the near future.
 #### (matrix/mult m1 m2)
 #### (matrix/sub m1 m2)
 #### (matrix/add m1 m2)
+#### (matrix/mult m1 m2)
 #### (matrix/sc-add m1 m2)
 #### (matrix/sc-mult m1 m2)
+#### (matrix/transpose m1)
+#### (matrix/inverse m1)
+#### (matrix/print m1)

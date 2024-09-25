@@ -2,6 +2,7 @@
 
 void same_size(const std::vector<double> &v1, const std::vector<double> &v2)
 {
+
     if (v1.size() != v2.size())
     {
         int32_t v1_size = v1.size();
@@ -9,6 +10,11 @@ void same_size(const std::vector<double> &v1, const std::vector<double> &v2)
 
         janet_panicf("Vectors must have the same size! \nvector 1: %d\nvector 2: %d", v1_size, v2_size);
     }
+}
+
+int length(const std::vector<double> &v1)
+{
+    return v1.size();
 }
 
 /*
@@ -135,6 +141,47 @@ std::vector<std::vector<double>> outer_product(const std::vector<double> &v1, co
         {
             result[i][j] = v1[i] * v2[j];
         }
+    }
+    return result;
+}
+
+/*
+    Cross product of two vectors.
+    @param v1: vector 1
+    @param v2: vector 2
+
+    @return: a new vector with the result of the cross product.
+*/
+std::vector<double> cross_product(const std::vector<double> &v1, const std::vector<double> &v2)
+{
+    if (v1.size() != 3 || v2.size() != 3)
+    {
+        janet_panic("Cross product is only defined for 3D vectors");
+    }
+    std::vector<double> result;
+    result.push_back(v1[1] * v2[2] - v1[2] * v2[1]);
+    result.push_back(v1[2] * v2[0] - v1[0] * v2[2]);
+    result.push_back(v1[0] * v2[1] - v1[1] * v2[0]);
+    return result;
+}
+
+double norm(const std::vector<double> &v1)
+{
+    double result = 0;
+    for (int i = 0; i < v1.size(); i++)
+    {
+        result += v1[i] * v1[i];
+    }
+    return sqrt(result);
+}
+
+std::vector<double> normalize(const std::vector<double> &v1)
+{
+    double n = norm(v1);
+    std::vector<double> result;
+    for (int i = 0; i < v1.size(); i++)
+    {
+        result.push_back(v1[i] / n);
     }
     return result;
 }
