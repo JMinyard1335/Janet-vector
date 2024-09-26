@@ -22,6 +22,7 @@ git clone https://github.com/JMinyard1335/Janet-vector.git
 ### Install
 Once the repo is installed move in to the directory you cloned it into and run the following commands:
 ```
+jpm deps
 jpm build
 jpm install
 ```
