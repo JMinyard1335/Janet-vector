@@ -1,7 +1,7 @@
 (declare-project
   :name "vector"
   :description ``This module provides a set of vector opertions for janet arrays using the c++ vector library``
-  :version "0.0.0"
+  :version "0.0.1"
   :author "Jachin Minyard"
   :liscense "")
 
