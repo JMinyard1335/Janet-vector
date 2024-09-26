@@ -15,6 +15,7 @@ std::vector<double> janet_to_vector(const Janet &arg)
     for (int i = 0; i < array->count; i++)
     {
         Janet element = array->data[i];
+        // Confirms the array is only numbers.
         if (janet_type(element) != JANET_NUMBER)
         {
             janet_panicf("Expected a number at index %d", i);

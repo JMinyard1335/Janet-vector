@@ -1,6 +1,4 @@
-(import ../build/vector :as vec)
-#  Seed the random number gernerator 
-(var seed (math/rng (math/floor (os/clock))))
+# A Test file to check the math of the c++ functions. Takes the results of the c++ functions and compares them with the results of the equivalent Janet functions.
 # This file is meant to test the following operations of the vector operations.
 # The testing stragety here is to generate random vectors for each test
 # The results are then compared with the results of running the equivalent map in Janet
@@ -13,6 +11,11 @@
 # (vector/outer v1 v2)
 # (vector/cross v1 v2)
 # (vector/norm v1)
+
+(import ../build/vector :as vec)
+
+#  Seed the random number gernerator 
+(var seed (math/rng (math/floor (os/clock))))
 
 (defn generate-vector [len]
   (var v @[])
